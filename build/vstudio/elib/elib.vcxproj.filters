@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\elibc">
+      <UniqueIdentifier>{e63682f8-d02c-4530-9e0a-3b78290bb6eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\elibc\core">
+      <UniqueIdentifier>{516eb0cd-0e9a-4ab5-9534-b48d74c67e0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\elibc\perf">
+      <UniqueIdentifier>{c71bc137-1192-42c5-9d7c-f868900e3d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\elibc\stdlib">
+      <UniqueIdentifier>{2118fcaf-febc-4d23-8c47-f5bc2e5cd88d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\encoders">
+      <UniqueIdentifier>{4cbe2a81-9988-4c03-a855-eed826215045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hash">
+      <UniqueIdentifier>{2beb3dee-3f55-4de9-b622-2c90d7f55e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\http">
+      <UniqueIdentifier>{e6a596f2-cc9c-40de-9d7a-98ac99fce3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parsers">
+      <UniqueIdentifier>{06def690-a184-4cd4-b1fc-cfb3c3b9c58f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\text">
+      <UniqueIdentifier>{a1158d01-6b81-4092-85ce-e7080f78921a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\time">
+      <UniqueIdentifier>{c64f9402-855e-42d2-af5d-d9f8e05eac22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\wbxml">
+      <UniqueIdentifier>{0727fd5b-38e2-4667-894e-36ac2b59d2f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\elibc\core\ebinsearch.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\ebuffer.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\ecore_types.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\eerror.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\eerror_win.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\efile_win.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\elist.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\erandom.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\eset.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\esort.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\esystem_win.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\etrace_win.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\earray.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\core\eassert_win.c">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\perf\eclock_win.c">
+      <Filter>Source Files\elibc\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\perf\ememuse_win.c">
+      <Filter>Source Files\elibc\perf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\stdlib\eatoi2.c">
+      <Filter>Source Files\elibc\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\stdlib\estrncmp2.c">
+      <Filter>Source Files\elibc\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\elibc\stdlib\snprintf_win.c">
+      <Filter>Source Files\elibc\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\encoders\json_encode.c">
+      <Filter>Source Files\encoders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\encoders\xml_encode.c">
+      <Filter>Source Files\encoders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\hash\hash_fnv.c">
+      <Filter>Source Files\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\hash\hash_hmacsha1.c">
+      <Filter>Source Files\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\hash\hash_sha1.c">
+      <Filter>Source Files\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_encode.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_form.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_header.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_method.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_mime_types.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_misc.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_mixed.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_param.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_parse.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_request.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_response.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_status.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_url.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_urlformat.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_auth.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\http\http_content.c">
+      <Filter>Source Files\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\parsers\entity_parse.c">
+      <Filter>Source Files\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\parsers\escape_parse.c">
+      <Filter>Source Files\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\parsers\json_parse.c">
+      <Filter>Source Files\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\parsers\xml_parse.c">
+      <Filter>Source Files\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\text\text_base64.c">
+      <Filter>Source Files\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\text\text_format.c">
+      <Filter>Source Files\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\text\text_string.c">
+      <Filter>Source Files\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\time\time_format.c">
+      <Filter>Source Files\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\time\timeutils_win.c">
+      <Filter>Source Files\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\wbxml\wbxml_decoder.c">
+      <Filter>Source Files\wbxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\wbxml\wbxml_encoder.c">
+      <Filter>Source Files\wbxml</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\elibc\core\ebinsearch.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\ebuffer.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\ecore_types.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\eerror.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\efile.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\elist.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\erandom.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\eset.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\esort.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\estack.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\esystem.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\etrace.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\earray.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\core\eassert.h">
+      <Filter>Source Files\elibc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\perf\eclock.h">
+      <Filter>Source Files\elibc\perf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\perf\ememuse.h">
+      <Filter>Source Files\elibc\perf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\stdlib\estdlib.h">
+      <Filter>Source Files\elibc\stdlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\elibc.h">
+      <Filter>Source Files\elibc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elibc\elibc_config.h">
+      <Filter>Source Files\elibc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\encoders\json_encode.h">
+      <Filter>Source Files\encoders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\encoders\xml_encode.h">
+      <Filter>Source Files\encoders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\hash\hash_fnv.h">
+      <Filter>Source Files\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\hash\hash_hmacsha1.h">
+      <Filter>Source Files\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\hash\hash_sha1.h">
+      <Filter>Source Files\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_content.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_encode.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_form.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_header.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_method.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_mime_types.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_misc.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_mixed.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_param.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_parse.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_request.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_response.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_status.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_url.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_urlformat.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\http\http_auth.h">
+      <Filter>Source Files\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\parsers\entity_parse.h">
+      <Filter>Source Files\parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\parsers\escape_parse.h">
+      <Filter>Source Files\parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\parsers\json_parse.h">
+      <Filter>Source Files\parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\parsers\xml_parse.h">
+      <Filter>Source Files\parsers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\text\text_base64.h">
+      <Filter>Source Files\text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\text\text_format.h">
+      <Filter>Source Files\text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\text\text_string.h">
+      <Filter>Source Files\text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\time\time_format.h">
+      <Filter>Source Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\time\timeutils.h">
+      <Filter>Source Files\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\wbxml\wbxml_decoder.h">
+      <Filter>Source Files\wbxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\wbxml\wbxml_encoder.h">
+      <Filter>Source Files\wbxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\wbxml\wbxml_types.h">
+      <Filter>Source Files\wbxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elib.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\elib_config.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

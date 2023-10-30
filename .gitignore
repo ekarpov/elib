@@ -1,3 +1,7 @@
+# project folders
+build/binaries/
+build/vstudio/.vs/
+
 # Prerequisites
 *.d
 
