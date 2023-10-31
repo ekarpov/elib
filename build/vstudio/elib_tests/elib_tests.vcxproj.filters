@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tests">
+      <UniqueIdentifier>{6b22708d-d550-4b95-a037-813aa5fb5737}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tests\elibc">
+      <UniqueIdentifier>{7ed0af94-9b79-4a5c-80bc-2249d96c9d39}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\tests\elibc\elist_tests.cpp">
+      <Filter>tests\elibc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tests\elibc\esort_tests.cpp">
+      <Filter>tests\elibc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\tests\elib_tests_config.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
