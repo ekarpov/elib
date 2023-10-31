@@ -161,7 +161,6 @@ int escape_parse(escape_parser_t* escape_parser, const char* text, size_t text_s
     }
 
     /* process characters */
-    EASSERT(escape_parser->state != escape_parse_init);
     switch(escape_parser->state)
     {
     case escape_parse_octal:
@@ -186,6 +185,9 @@ int escape_parse(escape_parser_t* escape_parser, const char* text, size_t text_s
 
     case escape_parse_unicode_surrogate:
         return _escape_parse_unicode_surrogate(escape_parser, text, text_size, result_out, size_out);
+        break;
+    case escape_parse_init:
+        EASSERT(0);
         break;
     }
 

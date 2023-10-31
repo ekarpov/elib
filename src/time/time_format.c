@@ -90,7 +90,7 @@ ELIBC_FORCE_INLINE time_parser_char_t _datetime_parse_char(const char ch)
 }
 
 /* parse weekdays */
-ELIBC_FORCE_INLINE int _datetime_parse_weekday(const char* weekday, size_t name_length)
+int _datetime_parse_weekday(const char* weekday, size_t name_length)
 {
     int idx;
 
@@ -105,7 +105,7 @@ ELIBC_FORCE_INLINE int _datetime_parse_weekday(const char* weekday, size_t name_
 }
 
 /* parse month names */
-ELIBC_FORCE_INLINE int _datetime_parse_month(const char* month_name, size_t name_length)
+int _datetime_parse_month(const char* month_name, size_t name_length)
 {
     int idx;
 
@@ -227,7 +227,7 @@ int _datetime_format_unixtime(const datetime_t* datetime, char* str_output, size
     if(err != ELIBC_SUCCESS) return err;
 
     /* convert to string */
-    esprintf(convert_buffer, "%lld", unixtime);
+    esprintf(convert_buffer, "%lld", (long long int)unixtime);
 
     /* get length */
     str_len = estrlen(convert_buffer);
@@ -543,6 +543,10 @@ int _datetime_parse_iso8601(const char* str_input, size_t str_len, datetime_t* d
                 parse_state = time_parser_state_syntax_error;
             }
 
+            break;
+
+        default:
+            EASSERT(0);
             break;
         }
 
@@ -928,6 +932,10 @@ int _datetime_parse_rfc1123(const char* str_input, size_t str_len, datetime_t* d
                 parse_state = time_parser_state_syntax_error;
             }
             break;
+
+        default:
+            EASSERT(0);
+            break;
         }
 
         /* report error if any */
@@ -1256,6 +1264,9 @@ int _datetime_parse_twitter(const char* str_input, size_t str_len, datetime_t* d
             }
             break;
 
+        default:
+            EASSERT(0);
+            break;
         }
 
         /* report error if any */

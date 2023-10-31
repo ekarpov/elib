@@ -241,7 +241,7 @@ ELIBC_FORCE_INLINE xml_tag_t* _xml_tag_stack_top(xml_parser_t* xml_parser)
     return (xml_tag_t*)estack_top(&xml_parser->tag_stack);
 }
 
-ELIBC_FORCE_INLINE int _xml_skip_spaces(const char* text, size_t text_size, size_t* pos)
+int _xml_skip_spaces(const char* text, size_t text_size, size_t* pos)
 {
     /* ignore spaces */
     while(XML_CHAR2TOKEN(text[*pos]) == xml_token_space || 
@@ -285,7 +285,7 @@ ELIBC_FORCE_INLINE void _xml_report_event(xml_parser_t* xml_parser, xml_event_t 
     ebuffer_reset(xml_parser->parse_buffer);
 }
 
-ELIBC_FORCE_INLINE void _xml_report_tag_content(xml_parser_t* xml_parser)
+void _xml_report_tag_content(xml_parser_t* xml_parser)
 {
     xml_token_t xml_token;
     size_t idx;

@@ -24,7 +24,7 @@
     /* trace options */
     void    elibc_init_trace_callback(_elibc_trace_callback_t callback_ptr, void* callback_param);
 
-#ifdef WIN32
+#ifdef _ELIBC_OS_WINDOWS
 
     /* trace windows errors */
     #define ETRACE_WERR(msg, err)           _elibc_trace_werr(msg, err)
