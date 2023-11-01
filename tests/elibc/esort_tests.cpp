@@ -13,6 +13,8 @@
 
 GTEST_TEST(elibc_esort_tests, esort_test_reverse)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     int* sort_buffer;
     size_t idx;
     int err;
@@ -43,6 +45,8 @@ GTEST_TEST(elibc_esort_tests, esort_test_reverse)
 
 GTEST_TEST(elibc_esort_tests, esort_test_random)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     int* sort_buffer;
     size_t idx;
     int err;
@@ -76,6 +80,8 @@ GTEST_TEST(elibc_esort_tests, esort_test_random)
 
 GTEST_TEST(elibc_esort_tests, esort_test_strings)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     char** sort_buffer;
     size_t idx;
     int err;

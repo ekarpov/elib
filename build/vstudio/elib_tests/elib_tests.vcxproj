@@ -27,6 +27,12 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <EnableASAN>true</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <EnableASAN>true</EnableASAN>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="Shared" />
@@ -59,9 +65,26 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\tests\elibc\elist_tests.cpp" />
     <ClCompile Include="..\..\..\tests\elibc\esort_tests.cpp" />
+    <ClCompile Include="..\..\..\tests\parsers\datetime_parse_tests.cpp" />
+    <ClCompile Include="..\..\..\tests\parsers\entity_parse_tests.cpp" />
+    <ClCompile Include="..\..\..\tests\parsers\escape_parse_tests.cpp" />
+    <ClCompile Include="..\..\..\tests\parsers\http_parse_tests.cpp" />
+    <ClCompile Include="..\..\..\tests\parsers\xml_parse_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\tests\elib_tests_config.h" />
+    <ClInclude Include="..\..\..\tests\elib_tests_memory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\tests\data\books.xml" />
+    <Xml Include="..\..\..\tests\data\dtd_test.xml" />
+    <Xml Include="..\..\..\tests\data\entity.xml" />
+    <Xml Include="..\..\..\tests\data\rss_test.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\tests\data\http_request_no_data.txt" />
+    <Text Include="..\..\..\tests\data\http_request_simple.txt" />
+    <Text Include="..\..\..\tests\data\http_response_simple.txt" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+
+<book category="cooking&PrecedesSlantEqual;">
+  <title lang="en\u{000061}">Everyday&#x21; <!-- test comment -->Italian&#33;</title>
+  <author>Giad\u{000061} De Laurentiis</author>
+  <year>2005</year>
+  <price>30.00</price><!-- test comment -->
+</book>
+<!-- test comment -->
+<book category="children">
+  <title lang="en">&lt;&lt;Harry Potter&gt;&gt;</title>
+  <author>J K. Rowling</author>
+  <year>2005</year>
+  <price>29.99</price>
+</book>
+
+<book category="web">
+  Test \uD834\uDF06 before \v
+  <title lang="en">XQuery Kick Start</title>
+  <author>James McGovern<!-- test comment --></author>
+  <author>Per Bothner</author>
+  <author>Kurt Cagle</author>
+  <author>James Linn</author>
+  <author>Vaidyanathan Nagarajan</author>
+  <year>CDATA BEFORE<![CDATA[ They're saying "x < y" & that "z > y" so I guess that means that z > x ]]>CDATA AFTER</year>
+  <price>49.99</price>
+</book>
+
+<book category="web" cover="paperback">
+  <title lang="en">Learning XML</title>
+  <author>Erik T. Ray</author>
+  <year>2003</year>
+  <price>39.95</price>
+  Test content after
+</book>
+
+</bookstore>

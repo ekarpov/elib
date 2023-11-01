@@ -7,6 +7,12 @@
     <Filter Include="tests\elibc">
       <UniqueIdentifier>{7ed0af94-9b79-4a5c-80bc-2249d96c9d39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="tests\parsers">
+      <UniqueIdentifier>{47fe93de-ba35-420e-98f8-c882694f2588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{fb010326-21b7-489c-9f80-b731c569a74d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\tests\elibc\elist_tests.cpp">
@@ -15,10 +21,56 @@
     <ClCompile Include="..\..\..\tests\elibc\esort_tests.cpp">
       <Filter>tests\elibc</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\tests\parsers\datetime_parse_tests.cpp">
+      <Filter>tests\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tests\parsers\entity_parse_tests.cpp">
+      <Filter>tests\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tests\parsers\escape_parse_tests.cpp">
+      <Filter>tests\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tests\parsers\http_parse_tests.cpp">
+      <Filter>tests\parsers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tests\parsers\xml_parse_tests.cpp">
+      <Filter>tests\parsers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\tests\elib_tests_config.h">
       <Filter>tests</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\tests\elib_tests_memory.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\tests\data\books.xml">
+      <Filter>data</Filter>
+    </Xml>
+    <Xml Include="..\..\..\tests\data\dtd_test.xml">
+      <Filter>data</Filter>
+    </Xml>
+    <Xml Include="..\..\..\tests\data\entity.xml">
+      <Filter>data</Filter>
+    </Xml>
+    <Xml Include="..\..\..\tests\data\rss_test.xml">
+      <Filter>data</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\tests\data\http_request_no_data.txt">
+      <Filter>data</Filter>
+    </Text>
+    <Text Include="..\..\..\tests\data\http_request_simple.txt">
+      <Filter>data</Filter>
+    </Text>
+    <Text Include="..\..\..\tests\data\http_response_simple.txt">
+      <Filter>data</Filter>
+    </Text>
   </ItemGroup>
 </Project>

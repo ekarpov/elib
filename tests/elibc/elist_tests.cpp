@@ -13,6 +13,8 @@
 
 GTEST_TEST(elibc_elist_tests, elist_test_item_size)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     elist_t elist;
     int size_t_size = sizeof(size_t);
     int idx;
@@ -29,6 +31,8 @@ GTEST_TEST(elibc_elist_tests, elist_test_item_size)
 
 GTEST_TEST(elibc_elist_tests, elist_test_items)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     elist_t elist;
     char test_data[ELIST_TEST_ITEM_SIZE];
     const void* list_data;
@@ -83,6 +87,8 @@ GTEST_TEST(elibc_elist_tests, elist_test_items)
 
 GTEST_TEST(elibc_elist_tests, elist_test_iterators)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     elist_t elist;
     char test_data[ELIST_TEST_ITEM_SIZE];
     const void* list_data;
@@ -279,6 +285,8 @@ GTEST_TEST(elibc_elist_tests, elist_test_iterators)
 
 GTEST_TEST(elibc_elist_tests, elist_test_head_removal)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     elist_t elist;
     eliter_t eiter, eiter_next;
     int err;
@@ -335,6 +343,8 @@ GTEST_TEST(elibc_elist_tests, elist_test_head_removal)
 
 GTEST_TEST(elibc_elist_tests, elist_test_sort)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     elist_t elist;
     eliter_t iter = ELIST_NULL_ITERATOR;
     size_t idx, item_count;
