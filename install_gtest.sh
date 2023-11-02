@@ -8,10 +8,7 @@ cd build
 
 sudo cmake .. 
 sudo make
-sudo cp libgtest* /usr/lib/ 
-ls -la
-ls -la lib
-ls -la bin
+sudo cp ./lib/libgtest* /usr/lib/ 
 sudo mkdir /usr/local/lib/gtest 
 sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a 
 sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
