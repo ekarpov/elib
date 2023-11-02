@@ -1,0 +1,17 @@
+name: Unit tests
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build
+      run: make tests
+
+    - name: Run tests
+      run: cd tests && ../build/binaries/elib_tests 

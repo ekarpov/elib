@@ -21,4 +21,5 @@ https://gist.github.com/mihaitodor/bfb8e7ad908489fdf3ceb496573f306a
 
 # CI/CD
 
-https://github.com/deftio/C-and-Cpp-Tests-with-CI-CD-Example/blob/master/.travis.yml
+GitHub actions
+https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration
