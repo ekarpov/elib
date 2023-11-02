@@ -39,10 +39,17 @@ BINDIR := build/binaries
 SRCDIR := src
 TESTSDIR := tests
 
+# PREFIX is environment variable, but if it is not set, then set default value
+ifeq ($(PREFIX),)
+    PREFIX := /usr/local
+endif
+
+# for custom installtion path overwrite this in make parameters
+# make install INSTALL_DIR=/path/to/install
+INSTALL_DIR := $(PREFIX)
+
 ###########################################################
 # common targets
-
-.PHONY: lib 
 
 all: clean lib
 
@@ -99,3 +106,21 @@ $(BINDIR)/$(ELIB_TESTS): $(OBJ_TESTS)
 
 ###########################################################
 # Install
+
+ELIB_HEADERS := $(call rwildcard, $(SRCDIR), *.h)
+ELIB_INSTALL_DIR_HEADERS := $(INSTALL_DIR)/include/$(ELIB)
+ELIB_INSTALL_DIR_LIB := $(INSTALL_DIR)/lib
+ELIB_INSTALL_HEADERS := $(subst $(SRCDIR), $(ELIB_INSTALL_DIR_HEADERS), $(ELIB_HEADERS))
+
+$(ELIB_INSTALL_DIR_HEADERS)/%.h: $(SRCDIR)/%.h
+	@mkdir -p $(dir $@)
+	install -m 644 $< $@
+
+install_dirs:
+	install -d $(ELIB_INSTALL_DIR_HEADERS)
+	install -d $(ELIB_INSTALL_DIR_LIB)
+
+install: $(BINDIR)/$(ELIB_LIB) install_dirs $(ELIB_INSTALL_HEADERS)
+	install -m 644 $(BINDIR)/$(ELIB_LIB) $(ELIB_INSTALL_DIR_LIB)
+
+
