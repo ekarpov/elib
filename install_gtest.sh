@@ -7,7 +7,7 @@ sudo mkdir build
 cd build 
 
 sudo cmake .. 
-sudo make install
+sudo make
 sudo cp libgtest* /usr/lib/ 
 ls -la
 ls -la lib
