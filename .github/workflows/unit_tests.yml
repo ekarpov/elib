@@ -4,14 +4,14 @@ on:
   push:
 
 jobs:
-  build:
+  build-Linux:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
     
     - name: Install gtest 
-      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+      run: ./install_gtest.sh
 
     - name: Build
       run: make tests
