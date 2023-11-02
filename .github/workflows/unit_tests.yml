@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Install gtest 
+      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make install
 
     - name: Build
       run: make tests
