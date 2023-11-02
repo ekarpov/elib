@@ -27,6 +27,8 @@ class EntityParseTest : public ::testing::TestWithParam<_EntityParseTestParams> 
 
 TEST_P(EntityParseTest, entity_parse_test)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     entity_result_t entity_result;
     int err;
     size_t size_used;

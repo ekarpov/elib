@@ -41,7 +41,7 @@ private:
 
 #else
 
-#define ELIB_GTEST_MEMORY_LEAK_DETECTOR()   
+#define ELIB_GTEST_MEMORY_LEAK_DETECTOR
 
 #endif /* defined(WIN32) || defined(_WIN64) */
 

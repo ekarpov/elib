@@ -8,6 +8,8 @@
 
 GTEST_TEST(datetome_parse_tests, date_parse_test_twitter)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     datetime_t datetime;
     char format_buffer[64];
     int err;
@@ -49,6 +51,8 @@ GTEST_TEST(datetome_parse_tests, date_parse_test_twitter)
 
 GTEST_TEST(datetome_parse_tests, date_parse_test_rss)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     datetime_t datetime;
     char format_buffer[64];
     etime_t unixtime;

@@ -23,6 +23,8 @@ class EscapeParseSingleChar : public ::testing::TestWithParam<EscapeParseSingleC
 
 TEST_P(EscapeParseSingleChar, escape_parse_test_singlechar_tc)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     escape_result_t escape_result;
     int err;
     size_t size_used;
@@ -87,6 +89,8 @@ class EscapeParseOctal : public ::testing::TestWithParam<EscapeParseOctalParams>
 
 TEST_P(EscapeParseOctal, escape_parse_test_octal_tc)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     escape_result_t escape_result;
     int err;
     size_t size_used;
@@ -145,6 +149,8 @@ class EscapeParse : public ::testing::TestWithParam<EscapeParseParams> {
 
 TEST_P(EscapeParse, escape_parse_test)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     escape_result_t escape_result;
     int err;
     size_t size_used;
@@ -166,7 +172,7 @@ TEST_P(EscapeParse, escape_parse_test)
     ASSERT_TRUE(escape_input_len(&escape_parser) == size_used + 1);
 
     /* validate output */
-    ASSERT_TRUE(escape_output_len(&escape_parser) == params.out_len);
+    ASSERT_TRUE(escape_output_len(&escape_parser) == (size_t)params.out_len);
     ASSERT_TRUE(estrncmp(params.output, escape_output(&escape_parser), params.out_len) == 0);
 }
 

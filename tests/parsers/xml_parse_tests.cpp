@@ -125,6 +125,8 @@ int _xml_parse_buffer(xml_parser_t* xml_parser, char* buffer, efilesize_t buffer
 
 GTEST_TEST(xml_parse_tests, xml_parse_test_base)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     xml_parser_t xml_parser;
 
     char* read_buffer = 0;
@@ -156,6 +158,8 @@ GTEST_TEST(xml_parse_tests, xml_parse_test_base)
 
 GTEST_TEST(xml_parse_tests, xml_parse_test_dtd)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     xml_parser_t xml_parser;
 
     char* read_buffer = 0;
@@ -187,6 +191,8 @@ GTEST_TEST(xml_parse_tests, xml_parse_test_dtd)
 
 GTEST_TEST(xml_parse_tests, xml_parse_test_rss)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     xml_parser_t xml_parser;
 
     char* read_buffer = 0;

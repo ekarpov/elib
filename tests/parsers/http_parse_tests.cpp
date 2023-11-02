@@ -142,6 +142,8 @@ class HttpParseTest : public ::testing::TestWithParam<HttpParseTestParams> {
 
 TEST_P(HttpParseTest, http_parse_test)
 {
+    ELIB_GTEST_MEMORY_LEAK_DETECTOR;
+
     http_parser_t http_parser;
     int ret;
 

@@ -10,7 +10,7 @@
 /*----------------------------------------------------------------------*/
 
 /* convert error to system error */
-unsigned long elibc_error_to_win32(int elibc_error_code)
+unsigned long elibc_error_to_errno(int elibc_error_code)
 {
     switch(elibc_error_code)
     {
@@ -55,7 +55,7 @@ unsigned long elibc_error_to_win32(int elibc_error_code)
     return ENOTSUP;
 }
 
-int  win32_to_elibc_error(unsigned long win32_error_code)
+int  errno_to_elibc_error(unsigned long win32_error_code)
 {
     switch(win32_error_code)
     {
