@@ -28,60 +28,60 @@ int _http_parse_trace_callback(void* user_data, http_event_t http_event, const v
     switch(http_event)
     {
     case http_event_version:
-        fprintf(stderr, "Version: %.*s\n", (int)data_size, (const char*)data);
+        printf("Version: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_method:
-        fprintf(stderr, "Method: %.*s\n", (int)data_size, (const char*)data);
+        printf("Method: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_uri:
-        fprintf(stderr, "URI: %.*s\n", (int)data_size, (const char*)data);
+        printf("URI: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_status_code:
-        fprintf(stderr, "Status code: %d\n", (int)*((const unsigned short*)data));
+        printf("Status code: %d\n", (int)*((const unsigned short*)data));
         break;
 
     case http_event_reason_phrase:
-        fprintf(stderr, "Reason phrase: %.*s\n", (int)data_size, (const char*)data);
+        printf("Reason phrase: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_content_length:
-        fprintf(stderr, "Content length: %d\n", (int)*((const euint64_t*)data));
+        printf("Content length: %d\n", (int)*((const euint64_t*)data));
         break;
 
     case http_event_content_type:
-        fprintf(stderr, "Content type: %.*s\n", (int)data_size, (const char*)data);
+        printf("Content type: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_header:
         http_header = *((const http_header_t*)data);
-        fprintf(stderr, "Header id: %d (%s)\n", (int)http_header, http_header_name(http_header));
+        printf("Header id: %d (%s)\n", (int)http_header, http_header_name(http_header));
         break;
 
     case http_event_header_name:
-        fprintf(stderr, "Header name: %.*s\n", (int)data_size, (const char*)data);
+        printf("Header name: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_header_value:
-        fprintf(stderr, "Header value: %.*s\n", (int)data_size, (const char*)data);
+        printf("Header value: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_headers_ready:
-        fprintf(stderr, "headers ready\n");
+        printf("headers ready\n");
         break;
 
     case http_event_content:
-        fprintf(stderr, "Content: %.*s\n", (int)data_size, (const char*)data);
+        printf("Content: %.*s\n", (int)data_size, (const char*)data);
         break;
 
     case http_event_done:
-        fprintf(stderr, "DONE\n");
+        printf("DONE\n");
         break;
 
     case http_event_syntax_error:
-        fprintf(stderr, "PARSER ERROR at %d\n", (int)data_size);
+        printf("PARSER ERROR\n");
         return ELIBC_STOP;
         break;
     }
@@ -158,7 +158,7 @@ TEST_P(HttpParseTest, http_parse_test)
     ASSERT_TRUE(read_buffer);
 
     /* init parser */
-    http_parse_init(&http_parser, _http_parse_trace_callback, 0);
+    http_parse_init(&http_parser, _http_parse_silent_callback, 0);
 
     /* process response */
     ret = _http_parse_buffer(&http_parser, params.type, read_buffer, buffer_size);
@@ -179,12 +179,12 @@ TEST_P(HttpParseTest, http_parse_test)
 /*----------------------------------------------------------------------*/
 
 INSTANTIATE_TEST_CASE_P(http_parse_test_request, HttpParseTest, ::testing::Values(
-    HttpParseTestParams("data/http_request_simple.txt", http_parse_request),
-    HttpParseTestParams("data/http_request_no_data.txt", http_parse_request)
+    HttpParseTestParams("data/http_request_simple.dat", http_parse_request),
+    HttpParseTestParams("data/http_request_no_data.dat", http_parse_request)
 ));
 
 INSTANTIATE_TEST_CASE_P(http_parse_test_response, HttpParseTest, ::testing::Values(
-    HttpParseTestParams("data/http_response_simple.txt", http_parse_response)
+    HttpParseTestParams("data/http_response_simple.dat", http_parse_response)
 ));
 
 

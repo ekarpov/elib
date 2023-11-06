@@ -316,7 +316,7 @@ int http_parse(http_parser_t* http_parser, const char* data, size_t data_size, s
         /* stop if error */
         if(http_parser->flags & HTTP_FLAG_ERROR)
         {
-//#ifdef _ELIBC_DEBUG
+#ifdef _ELIBC_DEBUG
             /* dump debug error report */
             {
                 char __tmp[128];
@@ -326,10 +326,9 @@ int http_parse(http_parser_t* http_parser, const char* data, size_t data_size, s
                 estrncpy(__tmp, data + char_pos, __text_copy);
                 __tmp[__text_copy] = 0;
 
-                //ETRACE1("http_parser: syntax error at  -> %s", __tmp);
-                fprintf(stderr, "http_parser: syntax error at  -> %s", __tmp);
+                ETRACE1("http_parser: syntax error at  -> %s", __tmp);
             }
-//#endif /* _ELIBC_DEBUG */
+#endif /* _ELIBC_DEBUG */
 
             /* report syntax error */
             if(http_parser->callback(http_parser->callback_data, http_event_syntax_error, 0, char_pos) != ELIBC_CONTINUE)
