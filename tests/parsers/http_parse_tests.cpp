@@ -81,7 +81,7 @@ int _http_parse_trace_callback(void* user_data, http_event_t http_event, const v
         break;
 
     case http_event_syntax_error:
-        fprintf(stderr, "PARSER ERROR\n");
+        fprintf(stderr, "PARSER ERROR at %d\n", (int)data_size);
         return ELIBC_STOP;
         break;
     }
