@@ -179,12 +179,12 @@ TEST_P(HttpParseTest, http_parse_test)
 /*----------------------------------------------------------------------*/
 
 INSTANTIATE_TEST_CASE_P(http_parse_test_request, HttpParseTest, ::testing::Values(
-    HttpParseTestParams("data/http_request_simple.dat", http_parse_request),
-    HttpParseTestParams("data/http_request_no_data.dat", http_parse_request)
+    HttpParseTestParams("data/http_request_simple.txt", http_parse_request),
+    HttpParseTestParams("data/http_request_no_data.txt", http_parse_request)
 ));
 
 INSTANTIATE_TEST_CASE_P(http_parse_test_response, HttpParseTest, ::testing::Values(
-    HttpParseTestParams("data/http_response_simple.dat", http_parse_response)
+    HttpParseTestParams("data/http_response_simple.txt", http_parse_response)
 ));
 
 
