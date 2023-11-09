@@ -44,6 +44,10 @@ const char* http_method(http_method_t http_method)
     case HTTP_METHOD_OPTIONS:               return "OPTIONS";
     case HTTP_METHOD_TRACE:                 return "TRACE";
     case HTTP_METHOD_PATCH:                 return "PATCH";
+
+    case HTTP_METHOD_UNKNOWN:
+        EASSERT(0);
+        break;
     }
 
     EASSERT1(0, "Unknown HTTP method");

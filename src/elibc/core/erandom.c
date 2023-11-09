@@ -15,12 +15,12 @@ static const char ELIBC_ALNUM_ARRAY[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 /*----------------------------------------------------------------------*/
 /* random characters */
-ELIBC_FORCE_INLINE char _erandom_char_alpha()
+char _erandom_char_alpha()
 {
     return ELIBC_ALPHABET_ARRAY[erand() % (sizeof(ELIBC_ALPHABET_ARRAY) / sizeof(ELIBC_ALPHABET_ARRAY[0]) - 1)];
 }
 
-ELIBC_FORCE_INLINE char _erandom_char_alnum()
+char _erandom_char_alnum()
 {
     return ELIBC_ALNUM_ARRAY[erand() % (sizeof(ELIBC_ALNUM_ARRAY) / sizeof(ELIBC_ALNUM_ARRAY[0]) - 1)];
 }

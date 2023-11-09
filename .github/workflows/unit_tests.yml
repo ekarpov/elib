@@ -1,0 +1,20 @@
+name: Unit tests
+
+on:
+  push:
+
+jobs:
+  build-Linux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install gtest 
+      run: ./install_gtest.sh
+
+    - name: Build
+      run: make tests
+
+    - name: Run tests
+      run: cd tests && ../build/binaries/elib_tests 

@@ -68,6 +68,10 @@ extern "C" {
 #include "encoders/xml_encode.h"
 
 /*----------------------------------------------------------------------*/
+/* common functions */
+const char* elib_version();
+
+/*----------------------------------------------------------------------*/
 
 /* allow using in C++ */
 #ifdef __cplusplus

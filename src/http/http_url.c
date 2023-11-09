@@ -17,20 +17,32 @@ const char* _http_url_parse_schema(const char* url, http_urlinfo_t *http_urlinfo
     http_urlinfo->secure = 0;
 
     /* parse schema */
-    if(*url != 'h') return url_begin; ++url;
-    if(*url != 't') return url_begin; ++url;
-    if(*url != 't') return url_begin; ++url;
-    if(*url != 'p') return url_begin; ++url;
+    if(*url != 'h') return url_begin; 
+    ++url;
+
+    if(*url != 't') return url_begin; 
+    ++url;
+
+    if(*url != 't') return url_begin; 
+    ++url;
+
+    if(*url != 'p') return url_begin; 
+    ++url;
+
     if(*url == 's')
     {
         http_urlinfo->secure = 1;
         ++url;
     }
-    if(*url != ':') return url_begin; ++url;
+    if(*url != ':') return url_begin; 
+    ++url;
 
     /* no slashes after : means syntax error */
-    if(*url != '/') return 0; ++url;
-    if(*url != '/') return 0; ++url;
+    if(*url != '/') return 0; 
+    ++url;
+
+    if(*url != '/') return 0; 
+    ++url;
 
     return url;
 }
@@ -199,7 +211,7 @@ int http_url_parse_arguments(const char* arguments, void* callback_data, http_ur
 {
     const char* argument=0;
     const char* value=0;
-    int argument_length, value_length;
+    int argument_length, value_length=0;
     int in_name;
 
     /* init first argument */

@@ -25,6 +25,13 @@ typedef euint32_t       utf32_t;
 #define HTTP_CONTENT_BOUNDARY_LENGTH                36
 
 /*----------------------------------------------------------------------*/
+/* version */
+
+#ifndef ELIB_VERSION
+#define ELIB_VERSION "unversioned (__DATE__ __TIME__)"
+#endif /* ELIB_VERSION */ 
+
+/*----------------------------------------------------------------------*/
 
 #endif /* _ELIB_CONFIG_H_ */
 

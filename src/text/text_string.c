@@ -339,8 +339,15 @@ int ustring_append_float(ustring_t* ustring, double number)
     if(ustring == 0) return ELIBC_ERROR_ARGUMENT;
 
     /* compute required size (in characters) */
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-truncation"
+#endif /* __GNUC__ */
     required_size = esnprintf(&dummy, 1, "%f", number);
-    if(required_size <= 0) 
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#endif /* __GNUC__ */
+    if(required_size <= 0)
     {
         ETRACE("ustring: failed to append floating number");
         return ELIBC_ERROR_ARGUMENT;

@@ -48,7 +48,7 @@
 
 /*----------------------------------------------------------------------*/
 
-#ifdef WIN32
+#ifdef _ELIBC_OS_WINDOWS
 
 /* convert error to system error */
 unsigned long elibc_error_to_win32(int elibc_error_code);
@@ -58,8 +58,8 @@ long elibc_error_to_hresult(int elibc_error_code);
 #else
 
 /* convert error to errno */
-// TODO:
 unsigned long elibc_error_to_errno(int elibc_error_code);
+int  errno_to_elibc_error(unsigned long errno_code);
 
 #endif /* WIN32 */
 

@@ -67,33 +67,33 @@ const utf16_t*  ustring_to_utf16(ustring_t* ustring);
 
 /*----------------------------------------------------------------------*/
 /* text helpers (use inline functions instead of macro for type checking) */
-ELIBC_FORCE_INLINE int ustring_set_text(ustring_t* ustring, const char* text, size_t length)
+inline int ustring_set_text(ustring_t* ustring, const char* text, size_t length)
 {
     return ustring_set_utf8(ustring, (const utf8_t*)text, length);
 }
 
-ELIBC_FORCE_INLINE int ustring_set_textw(ustring_t* ustring, const ewchar_t* text, size_t length)
+inline int ustring_set_textw(ustring_t* ustring, const ewchar_t* text, size_t length)
 {
     return ustring_set_utf16(ustring, (const utf16_t*)text, length);
 }
 
-ELIBC_FORCE_INLINE int ustring_append_text(ustring_t* ustring, const char* text, size_t length)
+inline int ustring_append_text(ustring_t* ustring, const char* text, size_t length)
 {
     return ustring_append_utf8(ustring, (const utf8_t*)text, length);
 }
 
-ELIBC_FORCE_INLINE int ustring_append_textw(ustring_t* ustring, const ewchar_t* text, size_t length)
+inline int ustring_append_textw(ustring_t* ustring, const ewchar_t* text, size_t length)
 {
     return ustring_append_utf16(ustring, (const utf16_t*)text, length);
 }
 
 /* string data as text */
-ELIBC_FORCE_INLINE const char* ustring_to_text(ustring_t* ustring)    
+inline const char* ustring_to_text(ustring_t* ustring)
 {
     return (const char*)ustring_to_utf8(ustring);
 }
 
-ELIBC_FORCE_INLINE const ewchar_t* ustring_to_textw(ustring_t* ustring)
+inline const ewchar_t* ustring_to_textw(ustring_t* ustring)
 {
     return (const ewchar_t*)ustring_to_utf16(ustring);
 }

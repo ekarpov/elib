@@ -73,7 +73,7 @@ void _elibc_trace_sbuff(const char* msg, const char* str, size_t slen)
 const char* _elibc_errno_to_text(unsigned long err_code)
 {
     /*
-     TODO: http://www.virtsync.com/c-error-codes-include-errno
+     Ref: https://gist.github.com/greggyNapalm/2413028
     */
 
     switch(err_code)

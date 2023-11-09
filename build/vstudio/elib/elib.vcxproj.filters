@@ -193,6 +193,9 @@
     <ClCompile Include="..\..\..\src\wbxml\wbxml_encoder.c">
       <Filter>Source Files\wbxml</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\elib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\elibc\core\ebinsearch.h">

@@ -57,7 +57,7 @@ int efile_open(EFILE* efile, const char* file_name, euint32_t mode)
         } else
         {
             ETRACE_ERRNO("efile_open failed to open file");
-            return ELIBC_ERROR_SYSTEM;
+            return errno_to_elibc_error(errno);
         }
     }
 
@@ -87,7 +87,7 @@ int efile_close(EFILE efile)
         {
             /* trace last error */
             ETRACE_ERRNO("efile_close failed to close file");
-            return ELIBC_ERROR_SYSTEM;
+            return errno_to_elibc_error(errno);
         }
     }
 
@@ -131,7 +131,7 @@ int efile_read(EFILE efile, void* buffer, size_t buffer_size, size_t* data_read)
     {
         /* trace last error */
         ETRACE_ERRNO("efile_read failed to read file");
-        return ELIBC_ERROR_SYSTEM;
+        return errno_to_elibc_error(errno);
     }
 
     /* copy bytes read if needed */
@@ -153,7 +153,7 @@ int efile_write(EFILE efile, const void* buffer, size_t buffer_size, size_t* dat
     {
         /* trace last error */
         ETRACE_ERRNO("efile_read failed to write file");
-        return ELIBC_ERROR_SYSTEM;
+        return errno_to_elibc_error(errno);
     }
 
     /* copy bytes written if needed */
@@ -175,7 +175,7 @@ int efile_size(EFILE efile, efilesize_t* file_size)
     {
         /* trace last error */
         ETRACE_ERRNO("efile_size failed to get file size");
-        return ELIBC_ERROR_SYSTEM;
+        return errno_to_elibc_error(errno);
     }
 
     /* copy file size */
@@ -197,7 +197,7 @@ int efile_size_name(const char* file_name, efilesize_t* file_size)
     {
         /* trace last error */
         ETRACE_ERRNO("efile_size_name failed to get file size");
-        return ELIBC_ERROR_SYSTEM;
+        return errno_to_elibc_error(errno);
     }
 
     /* copy file size */
