@@ -478,7 +478,7 @@ size_t utf8_to_utf16(const utf8_t* utf8_str, size_t str_len, utf16_t* utf16_str,
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf8_to_utf16: %d too large codepoints replaced", replaced_chars);
+        ETRACE("utf8_to_utf16: %d too large codepoints replaced", replaced_chars);
     }
             
     /* copy output size if needed */
@@ -531,7 +531,7 @@ size_t utf16_to_utf8(const utf16_t* utf16_str, size_t str_len, utf8_t* utf8_str,
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf16_to_utf8: %d codepoints replaced", replaced_chars);
+        ETRACE("utf16_to_utf8: %d codepoints replaced", replaced_chars);
     }
 
     /* copy output size if needed */
@@ -619,7 +619,7 @@ size_t utf16_to_utf32(const utf16_t* utf16_str, size_t str_len, utf32_t* utf32_s
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf16_to_utf32: %d codepoints replaced", replaced_chars);
+        ETRACE("utf16_to_utf32: %d codepoints replaced", replaced_chars);
     }
 
     /* copy output size if needed */
@@ -678,7 +678,7 @@ size_t utf32_to_utf16(const utf32_t* utf32_str, size_t str_len, utf16_t* utf16_s
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf32_to_utf16: %d codepoints replaced", replaced_chars);
+        ETRACE("utf32_to_utf16: %d codepoints replaced", replaced_chars);
     }
 
     /* copy output size if needed */
@@ -882,7 +882,7 @@ static size_t utf8url_to_utf16_impl(const char* utf8url_str, size_t str_len, utf
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf8url_to_utf16: %d codepoints replaced", replaced_chars);
+        ETRACE("utf8url_to_utf16: %d codepoints replaced", replaced_chars);
     }
 
     /* copy output size if needed */
@@ -968,7 +968,7 @@ static size_t utf16_to_utf8url_impl(const utf16_t* utf16_str, size_t str_len, ch
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf16_to_utf8url: %d codepoints replaced", replaced_chars);
+        ETRACE("utf16_to_utf8url: %d codepoints replaced", replaced_chars);
     }
 
     /* copy output size if needed */
@@ -1236,7 +1236,7 @@ static size_t utf8_to_utf8esc_impl(const utf8_t* utf8_str, size_t str_len, char*
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf8_to_utf8esc: %d codepoints replaced", replaced_chars);
+        ETRACE("utf8_to_utf8esc: %d codepoints replaced", replaced_chars);
     }
 
     /* copy output size if needed */
@@ -1306,7 +1306,7 @@ static size_t utf16_to_utf8esc_impl(const utf16_t* utf16_str, size_t str_len, ch
 
     if(replaced_chars > 0)
     {
-        ETRACE1("utf16_to_utf8esc: %d codepoints replaced", replaced_chars);
+        ETRACE("utf16_to_utf8esc: %d codepoints replaced", replaced_chars);
     }
 
     /* copy output size if needed */

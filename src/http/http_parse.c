@@ -326,7 +326,7 @@ int http_parse(http_parser_t* http_parser, const char* data, size_t data_size, s
                 estrncpy(__tmp, data + char_pos, __text_copy);
                 __tmp[__text_copy] = 0;
 
-                ETRACE1("http_parser: syntax error at  -> %s", __tmp);
+                ETRACE("http_parser: syntax error at  -> %s", __tmp);
             }
 #endif /* _ELIBC_DEBUG */
 

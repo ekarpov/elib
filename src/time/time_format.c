@@ -553,7 +553,7 @@ int _datetime_parse_iso8601(const char* str_input, size_t str_len, datetime_t* d
         /* report error if any */
         if(parse_state == time_parser_state_syntax_error)
         {
-            ETRACE2("datetime_parse: syntax error at %d, unexpected character \'%c\'", str_idx, str_input[str_idx]);
+            ETRACE("datetime_parse: syntax error at %d, unexpected character \'%c\'", str_idx, str_input[str_idx]);
             return ELIBC_ERROR_PARSER_INVALID_INPUT;
         }
 
@@ -881,7 +881,7 @@ int _datetime_parse_rfc1123(const char* str_input, size_t str_len, datetime_t* d
                     parse_buffer[buffer_pos] = 0;
 
                     /* unknown time zone offset */
-                    ETRACE1("datetime_parse: invalid time zone offset name %s", parse_buffer);
+                    ETRACE("datetime_parse: invalid time zone offset name %s", parse_buffer);
                     return ELIBC_ERROR_PARSER_INVALID_INPUT;
                 }
                 
@@ -941,7 +941,7 @@ int _datetime_parse_rfc1123(const char* str_input, size_t str_len, datetime_t* d
         /* report error if any */
         if(parse_state == time_parser_state_syntax_error)
         {
-            ETRACE2("datetime_parse: syntax error at %d, unexpected character \'%c\'", str_idx, str_input[str_idx]);
+            ETRACE("datetime_parse: syntax error at %d, unexpected character \'%c\'", str_idx, str_input[str_idx]);
             return ELIBC_ERROR_PARSER_INVALID_INPUT;
         }
     }
@@ -1272,7 +1272,7 @@ int _datetime_parse_twitter(const char* str_input, size_t str_len, datetime_t* d
         /* report error if any */
         if(parse_state == time_parser_state_syntax_error)
         {
-            ETRACE2("datetime_parse: syntax error at %d, unexpected character \'%c\'", str_idx, str_input[str_idx]);
+            ETRACE("datetime_parse: syntax error at %d, unexpected character \'%c\'", str_idx, str_input[str_idx]);
             return ELIBC_ERROR_PARSER_INVALID_INPUT;
         }
     }

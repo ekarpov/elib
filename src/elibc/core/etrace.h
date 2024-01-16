@@ -8,15 +8,7 @@
 /* tracing */
 #ifdef _ELIBC_ENABLE_TRACES
 
-    #define ETRACE(msg)                     _elibc_trace(msg)
-    #define ETRACE1(msg, arg)               _elibc_trace(msg, arg)
-    #define ETRACE2(msg, arg1, arg2)        _elibc_trace(msg, arg1, arg2)
-    #define ETRACE3(msg, arg1, arg2, arg3)  _elibc_trace(msg, arg1, arg2, arg3)
-
-    #define ETRACE_SBUFF(msg, str, slen)    _elibc_trace_sbuff(msg, str, slen)
-
-    void _elibc_trace(const char* format_str, ...);
-    void _elibc_trace_sbuff(const char* msg, const char* str, size_t slen);
+    void _elibc_trace(const char* _file, int _line, const char* fmt, ...);
 
     /* trace callback */
     typedef void (*_elibc_trace_callback_t)(const char* msg, void* callback_param);
@@ -26,33 +18,33 @@
 
 #ifdef _ELIBC_OS_WINDOWS
 
-    /* trace windows errors */
-    #define ETRACE_WERR(msg, err)           _elibc_trace_werr(msg, err)
-    #define ETRACE_WERR_LAST(msg)           _elibc_trace_werr_last(msg)
+    #define ETRACE(fmt, ...)                do { _elibc_trace(__FILE__, __LINE__, fmt, __VA_ARGS__); } while (0)
 
-    void _elibc_trace_werr(const char* text, unsigned long err);
-    void _elibc_trace_werr_last(const char* text);
+    /* trace windows errors */
+    #define ETRACE_WERR(msg, err)           _elibc_trace_werr(__FILE__, __LINE__, msg, err)
+    #define ETRACE_WERR_LAST(msg)           _elibc_trace_werr_last(__FILE__, __LINE__, msg)
+
+    void _elibc_trace_werr(const char* _file, int _line, const char* text, unsigned long err);
+    void _elibc_trace_werr_last(const char* _file, int _line, const char* text);
 
     /* trace HRESULT */
-    #define ETRACE_HRES(msg, res)           _elibc_trace_hres(msg, res)
+    #define ETRACE_HRES(msg, res)           _elibc_trace_hres(__FILE__, __LINE__, msg, res)
 
-    void _elibc_trace_hres(const char* text, unsigned long res);
+    void _elibc_trace_hres(const char* _file, int _line, const char* text, unsigned long res);
 
 #else
 
+    #define ETRACE(fmt, ...)                do { _elibc_trace(__FILE__, __LINE__, fmt, ##__VA_ARGS__); } while (0)
+
     /* trace errno */
-    #define ETRACE_ERRNO(msg)               _elibc_trace_errno(msg)
-    void _elibc_trace_errno(const char* text);
+    #define ETRACE_ERRNO(msg)               _elibc_trace_errno(__FILE__, __LINE__, msg)
+    void _elibc_trace_errno(const char* _file, int _line, const char* text);
 
 #endif /* WIN32 */
 
 #else
 
-    #define ETRACE(msg)
-    #define ETRACE1(msg, arg)
-    #define ETRACE2(msg, arg1, arg2)
-    #define ETRACE3(msg, arg1, arg2, arg3)
-    #define ETRACE_SBUFF(msg, str, slen)
+    #define ETRACE(fmt, ...)            do { } while (0)
     #define ETRACE_WERR(msg, err)
     #define ETRACE_WERR_LAST(msg)
     #define ETRACE_HRES(msg, res)

@@ -67,7 +67,7 @@ const char* _http_url_parse_host(const char* url, http_urlinfo_t *http_urlinfo)
 
         } else
         {
-            ETRACE1("http_url_parse: syntax error while parsing host name at %s", url);
+            ETRACE("http_url_parse: syntax error while parsing host name at %s", url);
             return 0;
         }
     }
@@ -103,7 +103,7 @@ const char* _http_url_parse_port(const char* url, http_urlinfo_t *http_urlinfo)
 
         } else
         {
-            ETRACE1("http_url_parse: syntax error while parsing port at %s", url);
+            ETRACE("http_url_parse: syntax error while parsing port at %s", url);
 
             /* set default */
             http_urlinfo->port = port;
@@ -227,7 +227,7 @@ int http_url_parse_arguments(const char* arguments, void* callback_data, http_ur
             /* check if argument is not empty */
             if(argument_length == 0)
             {
-                ETRACE1("http_url_parse: empty argument at %s", arguments);
+                ETRACE("http_url_parse: empty argument at %s", arguments);
                 return ELIBC_ERROR_PARSER_INVALID_INPUT;
             }
 

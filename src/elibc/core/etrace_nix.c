@@ -26,7 +26,7 @@ void    elibc_init_trace_callback(_elibc_trace_callback_t callback_ptr, void* ca
 }
 
 // tracing
-void _elibc_trace(const char* format_str, ...)
+void _elibc_trace(const char* _file, int _line, const char* format_str, ...)
 {
     char buff[_EMAX_DBG_MSG];
 
@@ -48,26 +48,6 @@ void _elibc_trace(const char* format_str, ...)
         /* if not, output to stderr */
         fprintf(stderr, "[ELIBC] %s\n", buff);
     }
-}
-
-/* trace string buffer */
-void _elibc_trace_sbuff(const char* msg, const char* str, size_t slen)
-{
-    size_t idx;
-    static char strBuf[_EMAX_DBG_MSG];
-
-    /* text length */
-    size_t text_len = slen < sizeof(strBuf) ? slen : sizeof(strBuf);
-    
-    /* copy string */
-    for(idx = 0; idx < text_len; ++idx)
-    {
-        strBuf[idx] = str[idx];
-    }
-    strBuf[text_len] = 0;
-
-    /* output */
-    _elibc_trace(msg, strBuf);
 }
 
 const char* _elibc_errno_to_text(unsigned long err_code)
@@ -117,10 +97,10 @@ const char* _elibc_errno_to_text(unsigned long err_code)
     return "Unknown error code";
 }
 
-void _elibc_trace_errno(const char* text)
+void _elibc_trace_errno(const char* _file, int _line, const char* text)
 {
     /* trace error */
-    _elibc_trace("%s: (errno: %d - \"%s\")", text, errno, _elibc_errno_to_text(errno));
+    _elibc_trace(_file, _line, "%s: (errno: %d - \"%s\")", text, errno, _elibc_errno_to_text(errno));
 }
 
 #endif // _ELIBC_ENABLE_TRACES

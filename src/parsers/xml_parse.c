@@ -587,7 +587,7 @@ int xml_parse(xml_parser_t* xml_parser, const char* text, size_t text_size)
                 estrncpy(__tmp, text + char_pos, __text_copy);
                 __tmp[__text_copy] = 0;
 
-                ETRACE1("xml_parser: syntax error at  -> %s", __tmp);
+                ETRACE("xml_parser: syntax error at  -> %s", __tmp);
             }
 #endif /* _ELIBC_DEBUG */
 

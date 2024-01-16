@@ -55,7 +55,7 @@ int _http_encode_begin_file(http_encode_t* http_encode, ebuffer_t* encode_buffer
         err = efile_openw(&http_encode->input_file, (const ewchar_t*)input_param->value, EFILE_OPEN_READ | EFILE_OPEN_EXISTING);
         if(err != ELIBC_SUCCESS)
         {
-            ETRACE1("http_encode_begin: failed to open file for reading \"%S\"", (const ewchar_t*)input_param->value);
+            ETRACE("http_encode_begin: failed to open file for reading \"%S\"", (const ewchar_t*)input_param->value);
             return err;
         }
 
@@ -65,7 +65,7 @@ int _http_encode_begin_file(http_encode_t* http_encode, ebuffer_t* encode_buffer
         err = efile_open(&http_encode->input_file, input_param->value, EFILE_OPEN_READ | EFILE_OPEN_EXISTING);
         if(err != ELIBC_SUCCESS)
         {
-            ETRACE1("http_encode_begin: failed to open file for reading \"%s\"", input_param->value);
+            ETRACE("http_encode_begin: failed to open file for reading \"%s\"", input_param->value);
             return err;
         }
     }

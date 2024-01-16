@@ -17,7 +17,7 @@ http_status_group_t http_status_code_group(unsigned short code)
     if(code >= 400 && code < 500) return HTTP_STATUS_GROUP_CLIENT_ERROR;
     if(code >= 500 && code < 600) return HTTP_STATUS_GROUP_SERVER_ERROR;
 
-    ETRACE1("Unsupported HTTP status code %d", code);
+    ETRACE("Unsupported HTTP status code %d", code);
     return HTTP_STATUS_GROUP_UNKNOWN;
 }
 
@@ -96,7 +96,7 @@ const char* http_status_reason_phrase(unsigned short code)
     case HTTP_STATUS_NETWORK_AUTHENTICATION_REQUIRED:   return "Network Authentication Required";
     }
 
-    ETRACE1("Unsupported HTTP status code %d", code);
+    ETRACE("Unsupported HTTP status code %d", code);
     return 0;
 }
 

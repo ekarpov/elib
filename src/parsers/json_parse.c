@@ -318,7 +318,7 @@ int json_parse(json_parser_t* json_parser, const char* text, size_t text_size)
                 estrncpy(__tmp, text + char_pos, __text_copy);
                 __tmp[__text_copy] = 0;
 
-                ETRACE1("json_parser: syntax error at  -> %s", __tmp);
+                ETRACE("json_parser: syntax error at  -> %s", __tmp);
             }
 #endif /* _ELIBC_DEBUG */
 

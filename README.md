@@ -14,7 +14,7 @@ cd elib
 make install
 ```
 
-For custom installtion path:
+For custom installation path:
 ```console
 make install INSTALL_DIR=/path/to/install
 ```
@@ -23,7 +23,7 @@ make install INSTALL_DIR=/path/to/install
 
 * Fast and low memory footprint
 * Plain C code without any extra dependencies, completely free 
-* Replacable standard library for non-standard systems
+* Replaceable standard library for non-standard systems
 * Modules
   * [Core](docs/elibc.md) - containers like list and array, sorting, memory buffer management, string manipulations and system functions
   * [Encoders](docs/encoders.md) - efficient json and xml encoders

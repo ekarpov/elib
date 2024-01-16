@@ -273,14 +273,14 @@ int http_form_encode_init(http_form_t* http_form, ebuffer_t* encode_buffer,
         /* check if parameter name is set correctly */
         if(parameters[para_idx].name == 0)
         {
-            ETRACE1("http_form_init: form parameter name is not set, user id = %d", parameters[para_idx].user_id);
+            ETRACE("http_form_init: form parameter name is not set, user id = %d", parameters[para_idx].user_id);
             return ELIBC_ERROR_ARGUMENT;
         }
 
         /* check if parameter value is set correctly */
         if(parameters[para_idx].value == 0 || parameters[para_idx].value_size == 0)
         {
-            ETRACE1("http_form_init: form parameter value is not set for \"%s\"", parameters[para_idx].name);
+            ETRACE("http_form_init: form parameter value is not set for \"%s\"", parameters[para_idx].name);
             return ELIBC_ERROR_ARGUMENT;
         }
 
@@ -294,7 +294,7 @@ int http_form_encode_init(http_form_t* http_form, ebuffer_t* encode_buffer,
         /* validate stream parameters */
         if(http_parameter_is_stream(parameters + para_idx) && parameters[para_idx].stream_read_func == 0)
         {
-            ETRACE1("http_form_init: callback is missing for stream parameter \"%s\"", parameters[para_idx].name);
+            ETRACE("http_form_init: callback is missing for stream parameter \"%s\"", parameters[para_idx].name);
             return ELIBC_ERROR_ARGUMENT;
         }
 
@@ -316,7 +316,7 @@ int http_form_encode_init(http_form_t* http_form, ebuffer_t* encode_buffer,
 
                 if(parameters[para_idx].content_type == 0)
                 {
-                    ETRACE1("http_form_init: failed ot guess content type from file name for parameter \"%s\"", parameters[para_idx].name);
+                    ETRACE("http_form_init: failed ot guess content type from file name for parameter \"%s\"", parameters[para_idx].name);
                     return ELIBC_ERROR_ARGUMENT;
                 }
             }
@@ -325,7 +325,7 @@ int http_form_encode_init(http_form_t* http_form, ebuffer_t* encode_buffer,
         /* validate that content type is set for binary parameters */
         if(http_parameter_is_binary(parameters + para_idx) && parameters[para_idx].content_type == 0)
         {
-            ETRACE1("http_form_init: content type is not set for binary parameter \"%s\"", parameters[para_idx].name);
+            ETRACE("http_form_init: content type is not set for binary parameter \"%s\"", parameters[para_idx].name);
             return ELIBC_ERROR_ARGUMENT;
         }
     }
